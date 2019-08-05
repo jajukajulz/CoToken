@@ -13,7 +13,8 @@ The Bond
 
 The Curve
 
-* Curve function: f(x) = 0.01x + 0.2 , x ∈ ℕ
+* Curve function: f(x) = 0.01x + 0.2 , x ∈ ℕ 
+    * i.e. ∈ (mathematics) means that it is an element in the set of... i.e.x ∈ ℕ denotes that x is within the set of natural numbers. 
 * Pricing: static pricing
 
 Specialty
