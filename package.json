@@ -1,0 +1,28 @@
+{
+  "name": "cotoken",
+  "version": "1.0.0",
+  "description": "Fixed supply ERC20 token (fungible) priced using a token bonding curve",
+  "main": "truffle-config.js",
+  "scripts": {
+    "test": "truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jajukajulz/CoToken.git"
+  },
+  "keywords": [
+    "solidity",
+    "smartcontract",
+    "erc20",
+    "token",
+    "nft",
+    "ethereum",
+    "truffle"
+  ],
+  "author": "Julian Kanjere",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jajukajulz/CoToken/issues"
+  },
+  "homepage": "https://github.com/jajukajulz/CoToken#readme"
+}
