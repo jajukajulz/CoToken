@@ -1,9 +1,9 @@
 //pragma solidity ^0.5.0; //solidity version
 pragma solidity ^0.4.24;
 
-//import "../node_modules/zeppelin-solidity/contracts/token/ERC20/ERC20Basic.sol";
-import "openzeppelin-solidity/contracts/token/ERC20/ERC20Basic.sol";
-import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
+import "../node_modules/zeppelin-solidity/contracts/token/ERC20/ERC20Basic.sol";
+import "../node_modules/zeppelin-solidity/contracts/ownership/Ownable.sol";
+
 
 /**
  * @dev Implementation of ERC20 fungible and ownable token based on the curve f(x) = 0.01x + 0.2 , x ∈ ℕ..
