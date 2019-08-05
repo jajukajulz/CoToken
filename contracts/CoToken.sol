@@ -84,7 +84,9 @@ determined by the sellPrice function.
     * @dev A destroy function that destructs the contract (see selfdestruct ). This function can only be called by the owner and it can only
 be called if all CO tokens belong to the owner .
     */
-    function destroy() public pure returns(uint) {
-        return 0;
+    function destroy() {
+        require(msg.sender == owner, "only the owner can call selfdestruct");
+        require(balances[owner] == MAX_SUPPLY, "can only be called if all CO tokens belong to the owner");
+        selfdestruct(owner);
     }
 }
