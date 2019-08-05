@@ -1,18 +1,38 @@
 //pragma solidity ^0.5.0; //solidity version
 pragma solidity ^0.4.24;
 
-import "../node_modules/zeppelin-solidity/contracts/token/ERC20/ERC20Basic.sol";
+//import "../node_modules/zeppelin-solidity/contracts/token/ERC20/ERC20Basic.sol";
+import "openzeppelin-solidity/contracts/token/ERC20/ERC20Basic.sol";
+import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
 /**
  * @dev Implementation of ERC20 fungible and ownable token based on the curve f(x) = 0.01x + 0.2 , x ∈ ℕ..
  * Uses Ether as the reserve currency.
  */
-contract CoToken is ERC20Basic {
+contract CoToken is ERC20Basic, Ownable {
+
+
+    /**
+    *  @dev state variables
+    */
+    string public name;
+    string public symbol;
+    uint32 public decimals;
+    uint256 public totalSupply;
 
     /**
     * @dev Contract constructor.
     */
     constructor () public {
+        symbol = "COTokenSymbol";
+        name = "CO";
+        decimals = 5;
+        totalSupply = 100;
+
+        owner = msg.sender;
+        balances[msg.sender] = totalSupply;
+
+        emit Transfer(0x0, msg.sender, totalSupply);
     }
 
     /**
