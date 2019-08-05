@@ -65,7 +65,7 @@ contract CoToken is ERC20, Ownable {
     * @dev A function to creates tokens if the correct current price is transferred to the contract. The price is determined by the buyPrice function.
     * @param _n number of tokens to be purchased.
     */
-    function mint(uint256 _n) internal {
+    function mint(uint256 _n) public {
         uint256 _purchasePrice = this.buyPrice(_n);
         require(msg.value == _purchasePrice, "Must send correct purchase price to buy tokens.");
         _balances[msg.sender] = _balances[msg.sender].add(_n);

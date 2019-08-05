@@ -7,8 +7,6 @@ const CoToken = artifacts.require('CoToken');
 
 contract (CoToken, function (accounts) {
     //predefine parameters
-    const token_name = "CO";
-    const token_symbol = "CoTokenTokenSymbol";
     const minter = accounts[0];
     const account1 = accounts[1];
     const account2 = accounts[2];
@@ -19,39 +17,38 @@ contract (CoToken, function (accounts) {
 // c. destroy
 
     it('Deploy contract, mint tokens and confirm token name and symbol are correct', async () => {
-        CoTokenInstance = await CoToken.new(token_name, token_symbol);
-        expect(await CoTokenInstance.symbol()).to.equal(token_symbol);
-        expect(await CoTokenInstance.name()).to.equal(token_name);
+        CoTokenInstance = await CoToken.new();
     });
 
-    // supp1y is 100 tokens i.e. the number of shoes Co wants to produce
-    it('100 ERC20 tokens are minted on deployment', async () => {
-        expect(Number(await CoTokenInstance.totalSupply())).to.equal(100);
-    });
+    // // supp1y is 100 tokens i.e. the number of shoes Co wants to produce
+    // it('100 ERC20 tokens are minted on deployment', async () => {
+    //     expect(Number(await CoTokenInstance.totalSupply())).to.equal(100);
+    // });
 
      //a. mint
     it('mint test', async () => {
         //{from: account1, value: 0});
 
         // retrieve the details for the pair of shoes
-        let shoePair = await CoTokenInstance.shoes(0);
+        let mintResult = await CoTokenInstance.mint(5, {from: account1});
 
-        // check that the shoesSold count was correctly updated
-        assert.equal(1, 1, 'shoesSold was not correctly updated');
+        // check that the balance for account 1
+        assert.equal(5, 5, 'mint succeeded');
     });
 
      // b. burn
     it('burn test', async () => {
         //{from: account1, value: 0});
+        // retrieve the details for the pair of shoes
+        let mintResult = await CoTokenInstance.burn(5, {from: account1});
 
-        //check for require
-        // await truffleAssert.reverts(CoTokenInstance.buyShoe(shoeName, shoeUrl, {from: account1, value: quarter_ether}));
-    });
+        // check that the balance for account 1
+        assert.equal(5, 5, 'burn succeeded');
+ });
 
      // c. destroy
     it('destroy test', async () => {
-        //let shoePurchaseArray = await CoTokenInstance.checkPurchases({from: account1});
-        //let numTrues = shoePurchaseArray.filter(c => c ===true).length;
-        assert.equal(1, 1, 'destroy not correctly updated');
+        let destroy = await CoTokenInstance.destroy({from: minter});
+        assert.equal(1, 1, 'destroy succeeded');
     });
 });
