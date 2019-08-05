@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/jajukajulz/CoToken/issues"
   },
-  "homepage": "https://github.com/jajukajulz/CoToken#readme"
+  "homepage": "https://github.com/jajukajulz/CoToken#readme",
+  "dependencies": {
+    "zeppelin-solidity": "^1.12.0"
+  }
 }
