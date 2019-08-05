@@ -1,5 +1,5 @@
 # CoToken
-Fixed supply ERC20 token (fungible) priced using a token bonding curve. Bonding Curves are a method of continous token minting / burning. 
+Fixed supply ERC20 ownable token (fungible) priced using a token bonding curve. Bonding Curves are a method of continous token minting / burning. 
 
 The Token
 
